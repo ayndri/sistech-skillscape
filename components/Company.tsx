@@ -19,11 +19,13 @@ function Company({ title }: CompanyProps) {
     return (
         <section className="company">
             <h2>{title}</h2>
+            <div className="company-container">
             {company.map((comp, index) => (
-                <div className="company-container" key={index}>
+                <div className="card-company" key={index}>
                     <CompanyCard image={comp.imageUrl} title={comp.name} />
                 </div>
             ))}
+            </div>
         </section>
     )
 }

@@ -15,8 +15,8 @@ const menu = [
 
 function Header() {
     return (
-        <header>
-            <nav>
+        <header className="header">
+            <nav className="nav">
                 <div>
                     <nav>
                         <Menu menu={menu} />
@@ -25,12 +25,14 @@ function Header() {
                 <div>
                     <Logo image="/images/logo.png" width={180} height={60} />
                 </div>
-                <div className="search-container">
-                    <Search />
-                </div>
-                <div className="btn-head">
+                <div>
+                    <div className="search-container">
+                        <Search />
+                    </div>
                     <ButtonOutline title="Log In" />
                     <Button children="Sign Up" />
+
+
                 </div>
             </nav>
         </header>

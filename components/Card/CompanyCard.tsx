@@ -8,9 +8,7 @@ type CompanyCardProps = {
 
 function CompanyCard({ title, image }: CompanyCardProps) {
   return (
-    <div>
-      <Image src={image} alt={title} width={40} height={30} />
-    </div>
+    <Image src={image} alt={title} width={60} height={40} />
   );
 }
 

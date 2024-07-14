@@ -200,7 +200,14 @@ function TabPanel(props: { children: ReactNode; value: number; index: number }) 
         >
             {value === index && (
                 <Box p={3}>
-                    {/* <Typography>{children}</Typography> */}
+                    
+                    {/* <Typography> */}
+                    <div className="tabcontent">
+                    {children}
+                    </div>
+                        
+                        {/* </Typography> */}
+                    
                 </Box>
             )}
         </div>
@@ -236,13 +243,15 @@ function VideoLearning({ title, description }: VideoLearningProps) {
             <div>
                 <Tabs value={value} onChange={handleChange} aria-label="Video Learning Tabs">
                     {videoCourses.map((course, index) => (
-                        <Tab key={index} label={course.title} />
+                        <Tab className="tablinks" key={index} label={course.title} />
                     ))}
                 </Tabs>
 
                 {videoCourses.map((course, index) => (
                     <TabPanel key={index} value={value} index={index}>
+                        {/* <div className="tabcontent"> */}
                         <LearningCard title={course.title} description={course.description} learning={course.courses} />
+                        {/* </div> */}
                     </TabPanel>
                 ))}
             </div>

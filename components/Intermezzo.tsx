@@ -17,7 +17,8 @@ function Intermezzo({ title, onClick }: IntermezzoProps) {
                     </div>
                 </div>
                 <div className="close-icon">
-                    <i className="fas fa-times"></i>
+                    {/* <i className="fas fa-times"></i> */}
+                    x
                 </div>
             </div>
         </aside>

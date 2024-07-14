@@ -6,7 +6,7 @@ type ButtonProps = {
 };
 
 function ButtonOutline ({title, onClick}: ButtonProps) {
-    return <button onClick={onClick}>{title}</button>
+    return <button className='btn-outline' onClick={onClick}>{title}</button>
 }
 
 export { ButtonOutline };

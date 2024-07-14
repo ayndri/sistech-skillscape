@@ -6,7 +6,7 @@ type ButtonProps = {
 };
 
 function Button ({children, onClick}: ButtonProps) {
-    return <button onClick={onClick}>{children}</button>
+    return <button className='btn-full' onClick={onClick}>{children}</button>
 }
 
 export { Button };

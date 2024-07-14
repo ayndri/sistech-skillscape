@@ -3,8 +3,10 @@ import { Logo } from "./Logo";
 import { Menu } from "./Menu/Menu";
 
 const menu = [
-    { title: "fab fa-facebook", link: "", isIcon: true },
-    { title: "fab fa-instagram", link: "", isIcon: true },
+    { title: "Buy a Course", link: "", isIcon: false },
+    { title: "Success", link: "", isIcon: false },
+    { title: "Categories", link: "", isIcon: false },
+    { title: "Pricing", link: "", isIcon: false }
 ];
 
 const menuIcon = [
@@ -14,7 +16,7 @@ const menuIcon = [
 
 function Footer() {
     return (
-        <footer>
+        <footer className="footer">
             <div className="logo">
                 <Logo image="/images/logo.png" width={120} height={45} />
             </div>

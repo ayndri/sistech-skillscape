@@ -7,7 +7,7 @@ function Search() {
             <button>
                 <Image src="/images/search.png" width={22} height={22} alt="Logo" />
             </button>
-            <input type="text" placeholder="Search..."></input>
+            <input className="input-search" type="text" placeholder="Search..."></input>
         </>
     )
 }

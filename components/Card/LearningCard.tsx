@@ -24,11 +24,13 @@ function LearningCard({title, description, learning }: LearningCardProps) {
                 <p>{description}</p>
                 <Button children={'Explore ' + title} />
             </div>
+            <div className="container-video" >
             {learning.map((list, index) => (
-                <div className="container-video" key={index}>
+                 <div className="card-video" >
                     <LearningList image={list.image} title={list.title} name={list.instructor} price={list.price} />
                 </div>
             ))}
+            </div>
         </>
     )
 }

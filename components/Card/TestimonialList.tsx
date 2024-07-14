@@ -27,8 +27,8 @@ function TestimonialList({ description, initial, name, video }: TestimonialListP
                     <Image
                         src="/images/play.png"
                         alt="play"
-                        width={20}
-                        height={20}
+                        width={10}
+                        height={10}
                     />
                 </div>
                 <span>{video}</span>
