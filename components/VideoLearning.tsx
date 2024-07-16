@@ -200,14 +200,14 @@ function TabPanel(props: { children: ReactNode; value: number; index: number }) 
         >
             {value === index && (
                 <Box p={3}>
-                    
+
                     {/* <Typography> */}
                     <div className="tabcontent">
-                    {children}
+                        {children}
                     </div>
-                        
-                        {/* </Typography> */}
-                    
+
+                    {/* </Typography> */}
+
                 </Box>
             )}
         </div>
@@ -234,6 +234,18 @@ function VideoLearning({ title, description }: VideoLearningProps) {
         setValue(newValue);
     };
 
+    const [courses, setCourses] = React.useState([]);
+
+    React.useEffect(() => {
+        async function fetchData() {
+            const res = await fetch('https://sistech-server.vercel.app/api/data');
+            const data = await res.json();
+            setCourses(data.data);
+        }
+
+        fetchData();
+    }, []);
+
     return (
         <section className="video-learning">
             <div className="title">
@@ -242,15 +254,15 @@ function VideoLearning({ title, description }: VideoLearningProps) {
             </div>
             <div>
                 <Tabs value={value} onChange={handleChange} aria-label="Video Learning Tabs">
-                    {videoCourses.map((course, index) => (
-                        <Tab className="tablinks" key={index} label={course.title} />
+                    {courses.map((item: any, index: number) => (
+                        <Tab className="tablinks" key={index} label={item.course} />
                     ))}
                 </Tabs>
 
-                {videoCourses.map((course, index) => (
+                {courses.map((item: any, index: number) => (
                     <TabPanel key={index} value={value} index={index}>
                         {/* <div className="tabcontent"> */}
-                        <LearningCard title={course.title} description={course.description} learning={course.courses} />
+                        <LearningCard title={item.course} img={item.imgUrl} description={item.description} learning={item.topics} />
                         {/* </div> */}
                     </TabPanel>
                 ))}

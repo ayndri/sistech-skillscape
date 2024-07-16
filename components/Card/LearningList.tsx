@@ -4,18 +4,16 @@ import React, { Children, ReactNode } from "react";
 type LearningListProps = {
     image: string;
     title: string;
-    name: string;
-    price: number;
+    content: string;
 };
 
-function LearningList({ image, title, name, price }: LearningListProps) {
+function LearningList({ image, title, content }: LearningListProps) {
     return (
         <>
             <Image src={image} alt={title} width={300} height={300} />
             <div className="content-video">
                 <span>{title}</span>
-                <small>{name}</small>
-                <span className="price">{'Rp' + price}</span>
+                <span className="price">{content}</span>
             </div>
         </>);
 }

@@ -14,9 +14,10 @@ type LearningCardProps = {
     title: string;
     description: string;
     learning: Course[];
+    img: string;
 }
 
-function LearningCard({title, description, learning }: LearningCardProps) {
+function LearningCard({title, description, learning, img }: LearningCardProps) {
     return (
         <>
             <div>
@@ -25,9 +26,9 @@ function LearningCard({title, description, learning }: LearningCardProps) {
                 <Button children={'Explore ' + title} />
             </div>
             <div className="container-video" >
-            {learning.map((list, index) => (
-                 <div className="card-video" >
-                    <LearningList image={list.image} title={list.title} name={list.instructor} price={list.price} />
+            {learning.map((list:any, index:number) => (
+                 <div className="card-video" key={index}>
+                    <LearningList image={img} title={list.name} content={list.content} />
                 </div>
             ))}
             </div>
